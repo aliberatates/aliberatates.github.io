@@ -17,8 +17,23 @@
     <<input type="hidden" name="redirect" value="https://aliberatates.github.io">
 
     <button type="submit">Submit Form</button>
-
+ <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
 </form>
     <h3><a href="/">Geri Git</a></h3>
+
+<!-- Recaptcha v3 -->
+
+<script src="https://www.google.com/recaptcha/api.js?render=6LddgyUrAAAAAG6GI3J5FWf1zJ3Q-6u3dLO1GIjc"></script>
+<script>
+    grecaptcha.ready(function () {
+        grecaptcha.execute('6LddgyUrAAAAAG6GI3J5FWf1zJ3Q-6u3dLO1GIjc', {
+                action: 'contact'
+            })
+            .then(function (token) {
+                recaptchaResponse.value = token;
+            });
+    });
+    
+</script>
     
 </center>
